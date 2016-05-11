@@ -1,6 +1,6 @@
 # PHPSHBIN
 
-PHP File Manager.
+PHP File Manager or Shell.
 
 
 Version 1.0
