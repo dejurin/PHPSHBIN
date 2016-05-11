@@ -12,5 +12,7 @@ Version 1.0
 
 # Install
 Move PHP script to folder. 
+
 Open file and edit inside variable $_rd md5 hash - password. Generate your password and paste to variable.
+
 Generate md5 http://www.md5.cz/ online.
