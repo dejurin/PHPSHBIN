@@ -1,6 +1,6 @@
 # PHPSHBIN
 
-PHP File Manager or Shell.
+PHP File Manager.
 
 Version 1.0
 - PHP Auth
