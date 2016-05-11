@@ -11,8 +11,7 @@ Version 1.0
 - View disk free space
 
 # Install
-Move PHP script to folder. 
-
+Move PHP script to folder.\n
 Open file and edit inside variable $_rd md5 hash - password. Generate your password and paste to variable.
 
 Generate md5 http://www.md5.cz/ online.
